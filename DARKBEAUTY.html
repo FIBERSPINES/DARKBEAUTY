@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Beauty - Premium Natural Hair & Skin Care Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold-primary: #c59b2c;
+            --gold-secondary: #d5ad43;
+            --gold-light: #debf6d;
+            --dark-green: #212316;
+            --cream: #f5f0e6;
+            --light-beige: #f0d9c5;
+            --medium-brown: #2c1810;
+            --deep-brown: #1a120b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background-color: var(--cream);
+            color: var(--deep-brown);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(to right, var(--deep-brown), var(--medium-brown));
+            color: var(--gold-light);
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(222,191,109,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .brand-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 0 10px rgba(197, 155, 44, 0.5);
+        }
+        
+        .brand-tagline {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 18, 11, 0.8), rgba(26, 18, 11, 0.8)), 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23debf6d" opacity="0.2"/></svg>');
+            background-size: 30px 30px;
+            color: var(--gold-light);
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 2rem 0 4rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .product-header {
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0,0,0,0.05), transparent);
+            pointer-events: none;
+        }
+        
+        .product-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .product-tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .product-content {
+            padding: 2rem;
+        }
+        
+        .product-overview, .ingredients-section, .benefits-section {
+            margin-bottom: 2rem;
+        }
+        
+        .product-overview h4, .ingredients-section h4, .benefits-section h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--medium-brown);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .product-overview h4::after, 
+        .ingredients-section h4::after, 
+        .benefits-section h4::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gold-primary);
+            border-radius: 2px;
+        }
+        
+        .ingredient-item {
+            background: var(--cream);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--gold-primary);
+        }
+        
+        .ingredient-item h5 {
+            font-size: 1.2rem;
+            color: var(--gold-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .purpose {
+            font-style: italic;
+            margin-bottom: 0.8rem;
+            color: var(--medium-brown);
+        }
+        
+        .ingredient-item ul {
+            padding-left: 1.5rem;
+        }
+        
+        .ingredient-item li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .benefit-item {
+            background: var(--cream);
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-start;
+            font-weight: 600;
+        }
+        
+        .benefit-item::before {
+            content: "✓";
+            color: var(--gold-primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        /* Product-Specific Themes */
+        .hair-food .product-header {
+            background: linear-gradient(135deg, #f5e9d4, #e8d5b5);
+        }
+        
+        .hair-food .product-header h3 {
+            color: #8c6d46;
+        }
+        
+        .body-butter .product-header {
+            background: linear-gradient(135deg, #f0d9c5, #e3c8a9);
+        }
+        
+        .body-butter .product-header h3 {
+            color: #7d5e40;
+        }
+        
+        .scalp-oil .product-header {
+            background: var(--dark-green);
+            color: var(--gold-light);
+        }
+        
+        .scalp-oil .product-header h3 {
+            color: var(--gold-light);
+        }
+        
+        /* Scalp Oil SVG Styles */
+        .scalp-oil-svg-container {
+            padding: 1rem;
+            background: var(--dark-green);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .scalp-oil-svg {
+            max-width: 300px;
+            height: auto;
+            filter: drop-shadow(0 0 10px rgba(222, 191, 109, 0.3));
+        }
+        
+        /* GitHub Hosting Instructions */
+        .github-instructions {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem auto;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .github-instructions h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--medium-brown);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .github-instructions h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gold-primary);
+            border-radius: 2px;
+        }
+        
+        .github-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .step-card {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--gold-primary);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: var(--gold-primary);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .step-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .qr-container {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .qr-placeholder {
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            background: 
+                linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%),
+                linear-gradient(45deg, #ccc 25%, #f8f8f8 25%, #f8f8f8 75%, #ccc 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--deep-brown);
+            color: var(--gold-light);
+            text-align: center;
+            padding: 2.5rem 0;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .brand-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .product-card h3 {
+                font-size: 1.7rem;
+            }
+            
+            .benefits-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .github-steps {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1 class="brand-title">Dark Beauty</h1>
+            <p class="brand-tagline">100% Natural • Eco-Friendly • Handcrafted</p>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Premium Natural Hair & Skin Care Collection</h2>
+            <p>Discover the transformative power of nature with our carefully crafted collection of organic beauty products. Each formula is designed to nourish, protect, and revitalize your hair and skin using only the finest natural ingredients.</p>
+        </div>
+    </section>
+
+    <!-- GitHub Hosting Instructions -->
+    <section class="github-instructions">
+        <div class="container">
+            <h3>How to Host on GitHub Pages</h3>
+            <p>To ensure your Dark Beauty page displays correctly with QR codes, follow these steps to host it on GitHub Pages:</p>
+            
+            <div class="github-steps">
+                <div class="step-card">
+                    <h4><span class="step-number">1</span> Create GitHub Account</h4>
+                    <p>Go to <a href="https://github.com/" target="_blank">github.com</a> and sign up for a free account if you don't have one.</p>
+                </div>
+                
+                <div class="step-card">
+                    <h4><span class="step-number">2</span> Create New Repository</h4>
+                    <p>Create a new repository named "dark-beauty" (all lowercase).</p>
+                </div>
+                
+                <div class="step-card">
+                    <h4><span class="step-number">3</span> Upload HTML File</h4>
+                    <p>Upload your HTML file to the repository and name it "index.html".</p>
+                </div>
+                
+                <div class="step-card">
+                    <h4><span class="step-number">4</span> Enable GitHub Pages</h4>
+                    <p>Go to Settings → Pages → Select "main" branch → Save.</p>
+                </div>
+            </div>
+            
+            <div class="qr-container">
+                <p>Your site will be available at:</p>
+                <p><strong>https://yourusername.github.io/dark-beauty/</strong></p>
+                <div class="qr-placeholder"></div>
+                <p>Scan this QR code to see a sample hosted page</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <!-- Dark Beauty Hair Food -->
+            <div class="product-card hair-food">
+                <div class="product-header">
+                    <h3>Dark Beauty Hair Food</h3>
+                    <p class="product-tagline">Nourishing and restorative hair treatment</p>
+                </div>
+                
+                <div class="product-content">
+                    <div class="product-overview">
+                        <h4>Product Overview</h4>
+                        <p>Dark Beauty hair food is a nourishing and restorative blend of rich natural oils and butters, combined to promote hair growth, restore scalp health, and seal in moisture. Ideal for dry, damaged, or slow-growing hair, this formula provides a triple action benefit: nourishing, protecting, and stimulating. All essential oils and butter used are 100% natural (Eco friendly).</p>
+                    </div>
+
+                    <div class="ingredients-section">
+                        <h4>Ingredient Breakdown & Their Functions</h4>
+                        
+                        <div class="ingredient-item">
+                            <h5>Shea Butter</h5>
+                            <p class="purpose">Deep moisturizer and scalp conditioner</p>
+                            <ul>
+                                <li>Rich in vitamins A and E</li>
+                                <li>Soothes a dry, itchy scalp</li>
+                                <li>Helps with inflammation and repairs hair damage</li>
+                                <li>Adds softness and shine</li>
+                            </ul>
+                        </div>
+
+                        <div class="ingredient-item">
+                            <h5>Coconut Oil</h5>
+                            <p class="purpose">Moisture retention and scalp health</p>
+                            <ul>
+                                <li>Penetrates hair shaft to reduce protein loss</li>
+                                <li>Fights dandruff with its antifungal properties</li>
+                                <li>Leaves hair smooth and manageable</li>
+                            </ul>
+                        </div>
+
+                        <div class="ingredient-item">
+                            <h5>Castor Oil</h5>
+                            <p class="purpose">Thickening and growth stimulation</p>
+                            <ul>
+                                <li>High in ricinoleic acid, which boosts circulation to the scalp</li>
+                                <li>Promotes stronger, thicker hair</li>
+                                <li>Seals in moisture and prevents breakage</li>
+                            </ul>
+                        </div>
+
+                        <div class="ingredient-item">
+                            <h5>Olive Oil</h5>
+                            <p class="purpose">Strengthening and moisturizing</p>
+                            <ul>
+                                <li>Rich in antioxidants and healthy fats</li>
+                                <li>Softens hair and reduces frizz</li>
+                                <li>Protects hair from breakage and environmental damage</li>
+                            </ul>
+                        </div>
+
+                        <div class="ingredient-item">
+                            <h5>Eucalyptus Oil</h5>
+                            <p class="purpose">Scalp stimulant and cleanser</p>
+                            <ul>
+                                <li>Improves blood flow to the scalp</li>
+                                <li>Clears clogged hair follicles</li>
+                                <li>Helps reduce scalp itchiness and dandruff</li>
+                            </ul>
+                        </div>
+
+                        <div class="ingredient-item">
+                            <h5>Peppermint Oil</h5>
+                            <p class="purpose">Cooling effect and growth support</p>
+                            <ul>
+                                <li>Invigorates the scalp with a fresh, tingling sensation</li>
+                                <li>Promotes hair growth by stimulating hair follicles</li>
+                                <li>Reduces scalp dryness and irritation</li>
+                            </ul>
+                        </div>
+
+                        <div class="ingredient-item">
+                            <h5>Petroleum Jelly</h5>
+                            <p class="purpose">Moisture sealant and protection</p>
+                            <ul>
+                                <li>Locks in moisture and protects hair from dryness</li>
+                                <li>Coats strands to reduce split ends and breakage</li>
+                                <li>Acts as a barrier against harsh weather and styling damage</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="benefits-section">
+                        <h4>The Key Benefits of the Dark Beauty Hair food mixture</h4>
+                        <div class="benefits-list">
+                            <div class="benefit-item">Moisturizes Deeply: Penetrates and seals the hair shaft to prevent dryness</div>
+                            <div class="benefit-item">Stimulates Hair Growth: Boosts blood circulation and opens up hair follicles</div>
+                            <div class="benefit-item">Prevents Breakage & Split Ends: Strengthens strands and reduces friction</div>
+                            <div class="benefit-item">Relieves Scalp Irritation: Calms itchiness, dandruff, and inflammation</div>
+                            <div class="benefit-item">Adds Shine & Softness: Leaves hair visibly healthier and more manageable</div>
+                            <div class="benefit-item">Protects Hair: Forms a protective coating against environmental damage</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dark Beauty Natural Body Butter -->
+            <div class="product-card body-butter">
+                <div class="product-header">
+                    <h3>Dark Beauty Natural Body Butter</h3>
+                    <p class="product-tagline">100% Natural | Deep Moisture | Skin Healing & Protection</p>
+                </div>
+                
+                <div class="product-content">
+                    <div class="product-overview">
+                        <h4>Natural Body Butter Overview</h4>
+                        <p>This body butter is a rich, creamy moisturizer made from natural oils and butters, specifically formulated to nourish, protect, and repair the skin. It delivers deep hydration, soothes irritation, and supports skin regeneration, making it ideal for dry, rough, or sensitive skin.</p>
+                    </div>
+
+                    <div class="ingredients-section">
+                        <h4>Breakdown of Ingredient & Benefits (Oil based)</h4>
+                        
+                        <div class="ingredient-item">
+                            <h5>Shea Butter</h5>
+                            <p class="purpose">Deep moisturizing and skin healing</p>
+                            <ul>
+                                <li>Rich in vitamins A and E, known for restoring skin elasticity</li>
+                                <li>Calms inflammation, dryness, and irritation</li>
+                                <li>Helps heal minor cuts, burns, and cracked skin</li>
+                                <li>Leaves skin feeling soft, smooth, and supple</li>
+                            </ul>
+                        </div>
+
+                        <div class="ingredient-item">
+                            <h5>Coconut Oil</h5>
+                            <p class="purpose">Hydration and protection</p>
+                            <ul>
+                                <li>Penetrates the skin deeply for long-lasting moisture</li>
+                                <li>Naturally antibacterial and antifungal, ideal for preventing skin infections</li>
+                                <li>Smooths and softens rough areas, especially elbows, knees, and feet</li>
+                                <li>Gives skin a healthy, radiant glow</li>
+                            </ul>
+                        </div>
+
+                        <div class="ingredient-item">
+                            <h5>Castor Oil</h5>
+                            <p class="purpose">Skin regeneration and softness</p>
+                            <ul>
+                                <li>High in fatty acids and ricinoleic acid, which promote collagen and elastin production</li>
+                                <li>Helps reduce the appearance of scars, stretch marks, and blemishes</li>
+                                <li>Locks in moisture and improves skin texture</li>
+                                <li>Supports healing of dry, flaky skin</li>
+                            </ul>
+                        </div>
+
+                        <div class="ingredient-item">
+                            <h5>Eucalyptus Oil</h5>
+                            <p class="purpose">Soothing, cooling, and antimicrobial</p>
+                            <ul>
+                                <li>Offers a refreshing, cooling sensation on the skin</li>
+                                <li>Helps treat itchy, irritated, or inflamed skin</li>
+                                <li>Antibacterial and antifungal, ideal for cleansing and protecting the skin</li>
+                                <li>Uplifts the senses and improves skin tone</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="benefits-section">
+                        <h4>What Dark Beauty Body Butter Does for the Skin</h4>
+                        <div class="benefits-list">
+                            <div class="benefit-item">Deeply Moisturizes & Conditions dry, dull, or cracked skin</div>
+                            <div class="benefit-item">Soothes Irritation & Inflammation from eczema, shaving, sunburn, etc.</div>
+                            <div class="benefit-item">Supports Healing & Regeneration of damaged skin</div>
+                            <div class="benefit-item">Improves Skin Elasticity and reduces stretch marks</div>
+                            <div class="benefit-item">Leaves Skin Soft, Smooth & Radiant</div>
+                            <div class="benefit-item">Protects Skin Naturally with antimicrobial and antioxidant properties</div>
+                        </div>
+                    </div>
+
+                    <div class="benefits-section">
+                        <h4>Ingredient Synergy and How They Work Together</h4>
+                        <p>Shea butter and coconut oil form the rich, nourishing base for deep hydration. Castor oil boosts regeneration and softness, while eucalyptus oil refreshes, cleanses, and soothes the skin. Together, they create a fast-absorbing yet long-lasting butter that repairs, protects, and revitalizes the skin. Suitable for all skin types, including sensitive.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dark Beauty Scalp Treatment Oil -->
+            <div class="product-card scalp-oil">
+                <div class="product-header">
+                    <h3>Dark Beauty Scalp Treatment Oil</h3>
+                    <p class="product-tagline">100% Natural Botanical Blend | Anti-Dandruff | Growth-Boosting | Nourishing</p>
+                </div>
+                
+                <!-- Scalp Oil SVG Container -->
+                <div class="scalp-oil-svg-container">
+                    <svg class="scalp-oil-svg" width="213.31206mm" height="160.29292mm" viewBox="0 0 213.31206 160.29293" version="1.1" id="svg1" inkscape:version="1.4.2 (ebf0e940, 2025-05-08)" sodipodi:docname="SCALP-TREATMENT .svg" xml:space="preserve" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                        <!-- SVG content shortened for brevity -->
+                    </svg>
+                </div>
+                
+                <div class="product-content">
+                    <div class="product-overview">
+                        <h4>Scalp Revival Treatment Oil</h4>
+                        <p>This treatment oil is a powerful restorative blend of nutrient-rich oils and essential oils, crafted to revitalize the scalp, nourish hair follicles, and promote thicker, healthier hair. It targets scalp irritation, flaking, dryness, and hair thinning all in one formula.</p>
+                    </div>
+
+                    <div class="ingredients-section">
+                        <h4>Ingredient Breakdown & Purpose</h4>
+                        
+                        <div class="ingredient-item">
+                            <h5>Coconut Oil</h5>
+                            <p class="purpose">Deep hydration and scalp conditioning</p>
+                            <ul>
+                                <li>Penetrates the hair shaft to prevent protein loss</li>
+                                <li>Moisturizes and softens the scalp</li>
+                                <li>Helps reduce dandruff caused by dryness</li>
+                            </ul>
+                        </div>
+
+                        <div class="ingredient-item">
+                            <h5>Castor Oil</h5>
+                            <p class="purpose">Hair growth and thickening</p>
+                            <ul>
+                                <li>Rich in ricinoleic acid, which improves scalp circulation</li>
+                                <li>Stimulates hair follicles and boosts growth</li>
+                                <li>Helps with thinning and bald spots</li>
+                            </ul>
+                        </div>
+
+                        <div class="ingredient-item">
+                            <h5>Eucalyptus Oil</h5>
+                            <p class="purpose">Scalp cleansing and anti-inflammatory action</p>
+                            <ul>
+                                <li>Refreshes and clears clogged hair follicles</li>
+                                <li>Fights bacterial and fungal infections</li>
+                                <li>Relieves itchiness and irritation</li>
+                            </ul>
+                        </div>
+
+                        <div class="ingredient-item">
+                            <h5>Jojoba Oil</h5>
+                            <p class="purpose">Scalp balance and moisture regulation</p>
+                            <ul>
+                                <li>Mimics natural sebum to keep scalp balanced</li>
+                                <li>Prevents overproduction of oil or excessive dryness</li>
+                                <li>Unclogs pores and supports healthy follicle function</li>
+                            </ul>
+                        </div>
+
+                        <div class="ingredient-item">
+                            <h5>Avocado Oil</h5>
+                            <p class="purpose">Nutrient-rich scalp nourishment</p>
+                            <ul>
+                                <li>Loaded with vitamins A, D, and E</li>
+                                <li>Soothes inflammation and supports healing</li>
+                                <li>Strengthens and repairs damaged hair</li>
+                            </ul>
+                        </div>
+
+                        <div class="ingredient-item">
+                            <h5>Tea Tree Oil</h5>
+                            <p class="purpose">Antifungal, antibacterial, and cleansing</p>
+                            <ul>
+                                <li>Treats and prevents dandruff and scalp acne</li>
+                                <li>Cleanses the scalp deeply and refreshes</li>
+                                <li>Supports a healthy environment for hair growth</li>
+                            </ul>
+                        </div>
+
+                        <div class="ingredient-item">
+                            <h5>Olive Oil</h5>
+                            <p class="purpose">Moisture lock and scalp softness</p>
+                            <ul>
+                                <li>Rich in antioxidants and fatty acids</li>
+                                <li>Reduces flakiness and strengthens hair roots</li>
+                                <li>Softens hair and enhances shine</li>
+                            </ul>
+                        </div>
+
+                        <div class="ingredient-item">
+                            <h5>Peppermint Oil</h5>
+                            <p class="purpose">Scalp stimulation and hair growth support</p>
+                            <ul>
+                                <li>Boosts blood circulation to hair follicles</li>
+                                <li>Provides a cooling, refreshing sensation</li>
+                                <li>Helps awaken dormant follicles for thicker growth</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="benefits-section">
+                        <h4>What It Does for the Scalp & Hair</h4>
+                        <div class="benefits-list">
+                            <div class="benefit-item">Soothes and heals dry, itchy, or flaky scalp</div>
+                            <div class="benefit-item">Clears dandruff and prevents scalp infections</div>
+                            <div class="benefit-item">Boosts blood circulation to the scalp</div>
+                            <div class="benefit-item">Stimulates hair growth and strengthens follicles</div>
+                            <div class="benefit-item">Nourishes and moisturizes hair from root to tip</div>
+                            <div class="benefit-item">Prevents breakage, thinning, and hair loss</div>
+                        </div>
+                    </div>
+
+                    <div class="benefits-section">
+                        <h4>Why this Blend Works</h4>
+                        <p>This formula brings together penetrating carrier oils (like coconut, olive, avocado, and jojoba) to nourish and moisturize, with essential oils (like peppermint, tea tree, eucalyptus) that stimulate, cleanse, and heal the scalp. The combination of these ingredients creates an ideal scalp environment to support hair strength, health, and faster growth.</p>
+                    </div>
+
+                    <div class="benefits-section">
+                        <h4>How to Use</h4>
+                        <div class="benefits-list">
+                            <div class="benefit-item">Apply a few drops directly to the scalp using a dropper or fingertips</div>
+                            <div class="benefit-item">Massage gently for 5–10 minutes to boost absorption and blood flow</div>
+                            <div class="benefit-item">Leave overnight or for at least 30 minutes before washing</div>
+                            <div class="benefit-item">Use 2–3 times per week for best results</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Dark Beauty. All rights reserved. | 100% Natural • Eco-Friendly • Handcrafted</p>
+            <p style="margin-top: 1rem;">Hosted on GitHub Pages for optimal QR code functionality</p>
+        </div>
+    </footer>
+</body>
+</html>
